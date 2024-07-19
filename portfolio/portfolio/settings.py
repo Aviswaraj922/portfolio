@@ -26,7 +26,7 @@ SECRET_KEY = 'nv)=_h7=(#+dn7hk2#n17v406lzs#2-)l8kepd#y(u2g)g5_%-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app','.now.sh','127.0.0.1','localhost']
 
 
 # Application definition
@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER':'postgres',
+        'PASSWORD':'RaHzSQlEDbTWKdkDcfwrehBXczDYiwyT',
+        'HOST':'postgres.railway.internal',
+        'PORT':'5432',
     }
 }
 
@@ -124,7 +128,7 @@ STATIC_URL = '/static/'
 MEDIA_URL='/images/'
 
 STATICFILES_DIRS=[
-  os.path.join(BASE_DIR, 'static')  
+#   os.path.join(BASE_DIR, 'static')  
 ]
 
 STATICFILES_DIRS=os.path.join(BASE_DIR,'static'),
